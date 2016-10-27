@@ -1,6 +1,6 @@
 Android Support Annotations Haiku
 ======
-So you decided to write an annotation processors using [square/javapoet](https://github.com/square/javapoet) to generate some boilerplate away.
+So you decided to write an annotation processor using [square/javapoet](https://github.com/square/javapoet) to generate some boilerplate away.
 Next thing you knew, your code base was littered with `ClassName.get("android.support.annotation", "NonNull")` and friends.
 I've been there and got tired of declaring similar constants, so I made this little book of poems.
    
