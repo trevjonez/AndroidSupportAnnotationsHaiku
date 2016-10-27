@@ -47,10 +47,18 @@ public class IntRange {
       return this;
     }
 
+    public Builder from(long from) {
+      return from("$LL", from);
+    }
+
     public Builder to(String format, Object to) {
       this.toFormat = format;
       this.to = to;
       return this;
+    }
+
+    public Builder to(long to) {
+      return to("$LL", to);
     }
 
     public AnnotationSpec build() {

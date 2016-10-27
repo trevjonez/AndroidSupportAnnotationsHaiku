@@ -1,7 +1,7 @@
 Android Support Annotations Haiku
 ======
-So you decided to write one of those cool annotation processors using squareup/javapoet?
-Next thing you knew, your code base was littered with `ClassName.get("android.support.annotation", "NonNull")` or similar?
+So you decided to write an annotation processors using squareup/javapoet to generate some boilerplate away.
+Next thing you knew, your code base was littered with `ClassName.get("android.support.annotation", "NonNull")` and friends.
 I've been there and got tired of declaring similar constants, so I made this little book of poems.
    
 Installation
@@ -33,9 +33,20 @@ MethodSpec.builder("someMethod")
           .build();
 ```
 
-Annotations the have arguments can be customized via static factory methods that either
-do all the work or create a builder class to use. It really is just a thin layer
-on java poet so all the same rules apply. There are some repetitive unit tests you can look at to get an idea of how it works.
+Annotations that have arguments can be customized via static factory methods that either
+do all the work, or create a builder class you can use. It really is just a thin layer
+on java poet so all the same rules apply. 
+
+There are some repetitive unit tests you can look at to get an idea of how I intended it to work.
+
+Obligatory Haiku
+------
+
+```
+Sick of `ClassName.get`?
+Support annotations lib...
+I made this for you.
+```
 
 License
 ------

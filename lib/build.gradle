@@ -15,6 +15,9 @@
  */
 
 apply plugin: 'java'
+apply plugin: 'maven'
+
+group 'com.github.trevjonez'
 
 sourceCompatibility = 1.6
 targetCompatibility = 1.6
@@ -25,4 +28,34 @@ dependencies {
 
   testCompile group: 'junit', name: 'junit', version: '4.12'
   testCompile group: 'org.assertj', name: 'assertj-core', version: '3.5.2'
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+  classifier 'sources'
+  from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+  classifier 'javadoc'
+  from javadoc.destinationDir
+}
+
+artifacts {
+  archives sourcesJar
+  archives javadocJar
+}
+
+install {
+  repositories.mavenInstaller {
+    pom.project {
+      artifactId 'AndroidSupportAnnotationsPoetry'
+      licenses {
+        license {
+          name 'The Apache Software License, Version 2.0'
+          url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+          distribution 'repo'
+        }
+      }
+    }
+  }
 }

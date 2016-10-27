@@ -21,7 +21,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
-import static org.assertj.core.api.Java6Assertions.fail;
 
 /**
  * @author TrevJonez
@@ -64,8 +63,45 @@ public class RequiresPermissionTest {
         .isEqualTo("@android.support.annotation.RequiresPermission(conditional = true)");
   }
 
-  @Test
-  public void read() throws Exception {
-    fail("implement some tests for read and write");
+  @RunWith(JUnit4.class)
+  public static class ReadTest {
+    @Test
+    public void classNameOutput() throws Exception {
+      assertThat(RequiresPermission.Read.CLASS_NAME.toString())
+          .isEqualTo("android.support.annotation.RequiresPermission.Read");
+    }
+
+    @Test
+    public void specOutput() throws Exception {
+      assertThat(RequiresPermission.Read.SPEC.toString())
+          .isEqualTo("@android.support.annotation.RequiresPermission.Read");
+    }
+
+    @Test
+    public void value() throws Exception {
+      assertThat(RequiresPermission.Read.value("$L", RequiresPermission.SPEC).toString())
+          .isEqualTo("@android.support.annotation.RequiresPermission.Read(@android.support.annotation.RequiresPermission)");
+    }
+  }
+
+  @RunWith(JUnit4.class)
+  public static class WriteTest {
+    @Test
+    public void classNameOutput() throws Exception {
+      assertThat(RequiresPermission.Write.CLASS_NAME.toString())
+          .isEqualTo("android.support.annotation.RequiresPermission.Write");
+    }
+
+    @Test
+    public void specOutput() throws Exception {
+      assertThat(RequiresPermission.Write.SPEC.toString())
+          .isEqualTo("@android.support.annotation.RequiresPermission.Write");
+    }
+
+    @Test
+    public void value() throws Exception {
+      assertThat(RequiresPermission.Write.value("$L", RequiresPermission.SPEC).toString())
+          .isEqualTo("@android.support.annotation.RequiresPermission.Write(@android.support.annotation.RequiresPermission)");
+    }
   }
 }

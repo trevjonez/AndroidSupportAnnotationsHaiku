@@ -53,10 +53,18 @@ public class Size {
       return this;
     }
 
+    public Builder value(long value) {
+      return value("$L", value);
+    }
+
     public Builder min(String format, Object min) {
       this.minFormat = format;
       this.min = min;
       return this;
+    }
+
+    public Builder min(long min) {
+      return min("$L", min);
     }
 
     public Builder max(String format, Object max) {
@@ -65,10 +73,18 @@ public class Size {
       return this;
     }
 
+    public Builder max(long max) {
+      return max("$L", max);
+    }
+
     public Builder multiple(String format, Object multiple) {
       this.multipleFormat = format;
       this.multiple = multiple;
       return this;
+    }
+
+    public Builder multiple(long multiple) {
+      return multiple("$L", multiple);
     }
 
     public AnnotationSpec build() {

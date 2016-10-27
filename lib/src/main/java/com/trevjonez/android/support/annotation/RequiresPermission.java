@@ -59,14 +59,14 @@ public class RequiresPermission {
 
     public Builder allOf(String format, Object... allOf) {
       this.allOfFormat = format;
-      this.allOf = new LinkedList<>();
+      this.allOf = new LinkedList<Object>();
       Collections.addAll(this.allOf, allOf);
       return this;
     }
 
     public Builder anyOf(String format, Object... anyOf) {
       this.anyOfFormat = format;
-      this.anyOf = new LinkedList<>();
+      this.anyOf = new LinkedList<Object>();
       Collections.addAll(this.anyOf, anyOf);
       return this;
     }

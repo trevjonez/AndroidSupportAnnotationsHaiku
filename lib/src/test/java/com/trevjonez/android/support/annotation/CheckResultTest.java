@@ -47,6 +47,12 @@ public class CheckResultTest {
   }
 
   @Test
+  public void suggest_string_default_format() throws Exception {
+    assertThat(CheckResult.suggest("Use the other thing").toString())
+        .isEqualTo("@android.support.annotation.CheckResult(suggest = \"Use the other thing\")");
+  }
+
+  @Test
   public void suggest_other() throws Exception {
     assertThat(CheckResult.suggest("$T.CONSTANT", ClassName.get("some.package", "SomeType")).toString())
         .isEqualTo("@android.support.annotation.CheckResult(suggest = some.package.SomeType.CONSTANT)");

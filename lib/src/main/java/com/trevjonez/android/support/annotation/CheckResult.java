@@ -33,4 +33,9 @@ public class CheckResult {
   public static AnnotationSpec suggest(String format, Object suggest) {
     return SPEC.toBuilder().addMember("suggest", format, suggest).build();
   }
+
+  @NotNull
+  public static AnnotationSpec suggest(String suggest) {
+    return SPEC.toBuilder().addMember("suggest", "$S", suggest).build();
+  }
 }

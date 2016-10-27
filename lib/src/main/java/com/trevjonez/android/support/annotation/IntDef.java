@@ -47,7 +47,7 @@ public class IntDef {
 
     public Builder value(String format, Object... value) {
       this.valueFormat = format;
-      this.value = new LinkedList<>();
+      this.value = new LinkedList<Object>();
       Collections.addAll(this.value, value);
       return this;
     }
@@ -56,6 +56,10 @@ public class IntDef {
       this.flagFormat = format;
       this.flag = flag;
       return this;
+    }
+
+    public Builder flag(boolean flag) {
+      return flag("$L", flag);
     }
 
     public AnnotationSpec build() {

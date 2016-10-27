@@ -53,10 +53,18 @@ public class FloatRange {
       return this;
     }
 
+    public Builder from(double from) {
+      return from("$LD", from);
+    }
+
     public Builder to(String format, Object to) {
       this.toFormat = format;
       this.to = to;
       return this;
+    }
+
+    public Builder to(double to) {
+      return to("$LD", to);
     }
 
     public Builder fromInclusive(String format, Object fromInclusive) {
@@ -65,10 +73,18 @@ public class FloatRange {
       return this;
     }
 
+    public Builder fromInclusive(boolean fromInclusive) {
+      return fromInclusive("$L", fromInclusive);
+    }
+
     public Builder toInclusive(String format, Object toInclusive) {
       this.toInclusiveFormat = format;
       this.toInclusive = toInclusive;
       return this;
+    }
+
+    public Builder toInclusive(boolean toInclusive) {
+      return toInclusive("$L", toInclusive);
     }
 
     public AnnotationSpec build() {

@@ -46,8 +46,20 @@ public class IntRangeTest {
   }
 
   @Test
+  public void builder_from_long() throws Exception {
+    assertThat(IntRange.builder().from(2).build().toString())
+        .isEqualTo("@android.support.annotation.IntRange(from = 2L)");
+  }
+
+  @Test
   public void builder_to() throws Exception {
     assertThat(IntRange.builder().to("$LL", 2).build().toString())
+        .isEqualTo("@android.support.annotation.IntRange(to = 2L)");
+  }
+
+  @Test
+  public void builder_to_long() throws Exception {
+    assertThat(IntRange.builder().to(2).build().toString())
         .isEqualTo("@android.support.annotation.IntRange(to = 2L)");
   }
 }

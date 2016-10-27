@@ -46,8 +46,20 @@ public class FloatRangeTest {
   }
 
   @Test
+  public void builder_from_double() throws Exception {
+    assertThat(FloatRange.builder().from(0.1D).build().toString())
+        .isEqualTo("@android.support.annotation.FloatRange(from = 0.1D)");
+  }
+
+  @Test
   public void builder_to() throws Exception {
     assertThat(FloatRange.builder().to("$LD", 0.1D).build().toString())
+        .isEqualTo("@android.support.annotation.FloatRange(to = 0.1D)");
+  }
+
+  @Test
+  public void builder_to_double() throws Exception {
+    assertThat(FloatRange.builder().to(0.1D).build().toString())
         .isEqualTo("@android.support.annotation.FloatRange(to = 0.1D)");
   }
 
@@ -58,8 +70,20 @@ public class FloatRangeTest {
   }
 
   @Test
+  public void builder_fromInclusive_boolean() throws Exception {
+    assertThat(FloatRange.builder().fromInclusive(false).build().toString())
+        .isEqualTo("@android.support.annotation.FloatRange(fromInclusive = false)");
+  }
+
+  @Test
   public void builder_toInclusive() throws Exception {
     assertThat(FloatRange.builder().toInclusive("$L", true).build().toString())
+        .isEqualTo("@android.support.annotation.FloatRange(toInclusive = true)");
+  }
+
+  @Test
+  public void builder_toInclusive_boolean() throws Exception {
+    assertThat(FloatRange.builder().toInclusive(true).build().toString())
         .isEqualTo("@android.support.annotation.FloatRange(toInclusive = true)");
   }
 }

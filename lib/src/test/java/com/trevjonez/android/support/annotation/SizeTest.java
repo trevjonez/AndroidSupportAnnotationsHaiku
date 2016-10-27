@@ -46,8 +46,20 @@ public class SizeTest {
   }
 
   @Test
+  public void builder_value_long() throws Exception {
+    assertThat(Size.builder().value(36).build().toString())
+        .isEqualTo("@android.support.annotation.Size(36)");
+  }
+
+  @Test
   public void builder_min() throws Exception {
     assertThat(Size.builder().min("$L", 36).build().toString())
+        .isEqualTo("@android.support.annotation.Size(min = 36)");
+  }
+
+  @Test
+  public void builder_min_long() throws Exception {
+    assertThat(Size.builder().min(36).build().toString())
         .isEqualTo("@android.support.annotation.Size(min = 36)");
   }
 
@@ -58,8 +70,20 @@ public class SizeTest {
   }
 
   @Test
+  public void builder_max_long() throws Exception {
+    assertThat(Size.builder().max(36).build().toString())
+        .isEqualTo("@android.support.annotation.Size(max = 36)");
+  }
+
+  @Test
   public void builder_multiple() throws Exception {
     assertThat(Size.builder().multiple("$L", 2).build().toString())
+        .isEqualTo("@android.support.annotation.Size(multiple = 2)");
+  }
+
+  @Test
+  public void builder_multiple_long() throws Exception {
+    assertThat(Size.builder().multiple(2).build().toString())
         .isEqualTo("@android.support.annotation.Size(multiple = 2)");
   }
 }
