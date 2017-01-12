@@ -1,23 +1,20 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Unit Tests" type="JUnit" factoryName="JUnit" singleton="true">
-    <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-    <module name="lib" />
-    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-    <option name="ALTERNATIVE_JRE_PATH" />
-    <option name="PACKAGE_NAME" value="com.trevjonez" />
-    <option name="MAIN_CLASS_NAME" value="" />
-    <option name="METHOD_NAME" value="" />
-    <option name="TEST_OBJECT" value="package" />
-    <option name="VM_PARAMETERS" value="-ea" />
-    <option name="PARAMETERS" value="" />
-    <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/lib" />
-    <option name="ENV_VARIABLES" />
-    <option name="PASS_PARENT_ENVS" value="true" />
-    <option name="TEST_SEARCH_SCOPE">
-      <value defaultName="singleModule" />
-    </option>
-    <envs />
-    <patterns />
+  <configuration default="false" name="Unit Tests" type="GradleRunConfiguration" factoryName="Gradle" singleton="true">
+    <ExternalSystemSettings>
+      <option name="executionName" />
+      <option name="externalProjectPath" value="$PROJECT_DIR$/lib" />
+      <option name="externalSystemIdString" value="GRADLE" />
+      <option name="scriptParameters" value="" />
+      <option name="taskDescriptions">
+        <list />
+      </option>
+      <option name="taskNames">
+        <list>
+          <option value="test" />
+        </list>
+      </option>
+      <option name="vmOptions" value="" />
+    </ExternalSystemSettings>
     <method />
   </configuration>
 </component>

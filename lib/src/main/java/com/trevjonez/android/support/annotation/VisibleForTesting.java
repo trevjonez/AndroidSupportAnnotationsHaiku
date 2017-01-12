@@ -19,6 +19,8 @@ package com.trevjonez.android.support.annotation;
 import com.squareup.javapoet.AnnotationSpec;
 import com.squareup.javapoet.ClassName;
 
+import javax.annotation.Nonnull;
+
 /**
  * @author TrevJonez
  */
@@ -27,4 +29,29 @@ public class VisibleForTesting {
       ClassName.get(Constants.PACKAGE, VisibleForTesting.class.getSimpleName());
 
   public static final AnnotationSpec SPEC = AnnotationSpec.builder(CLASS_NAME).build();
+
+  @Nonnull
+  public static AnnotationSpec otherwisePrivate() {
+    return otherwise("PRIVATE");
+  }
+
+  @Nonnull
+  public static AnnotationSpec otherwisePackagePrivate() {
+    return otherwise("PACKAGE_PRIVATE");
+  }
+
+  @Nonnull
+  public static AnnotationSpec otherwiseProtected() {
+    return otherwise("PROTECTED");
+  }
+
+  @Nonnull
+  public static AnnotationSpec otherwiseNone() {
+    return otherwise("NONE");
+  }
+
+  @Nonnull
+  private static AnnotationSpec otherwise(String otherwise) {
+    return SPEC.toBuilder().addMember("otherwise", "$T.$L", CLASS_NAME, otherwise).build();
+  }
 }

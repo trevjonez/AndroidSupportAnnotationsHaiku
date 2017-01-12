@@ -18,7 +18,8 @@ package com.trevjonez.android.support.annotation;
 
 import com.squareup.javapoet.AnnotationSpec;
 import com.squareup.javapoet.ClassName;
-import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nonnull;
 
 /**
  * @author TrevJonez
@@ -29,12 +30,12 @@ public class CheckResult {
 
   public static final AnnotationSpec SPEC = AnnotationSpec.builder(CLASS_NAME).build();
 
-  @NotNull
+  @Nonnull
   public static AnnotationSpec suggest(String format, Object suggest) {
     return SPEC.toBuilder().addMember("suggest", format, suggest).build();
   }
 
-  @NotNull
+  @Nonnull
   public static AnnotationSpec suggest(String suggest) {
     return SPEC.toBuilder().addMember("suggest", "$S", suggest).build();
   }

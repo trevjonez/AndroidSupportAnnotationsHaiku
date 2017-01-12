@@ -17,7 +17,7 @@ allprojects {
 
 Declare the dependency
 ```groovy
-compile 'com.github.trevjonez:AndroidSupportAnnotationsHaiku:24.2.1.1'
+compile 'com.github.trevjonez:AndroidSupportAnnotationsHaiku:25.1.0.1'
 ```
 
 The version of the library will track against the version of the support library where

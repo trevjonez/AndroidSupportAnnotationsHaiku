@@ -18,8 +18,8 @@ package com.trevjonez.android.support.annotation;
 
 import com.squareup.javapoet.AnnotationSpec;
 import com.squareup.javapoet.ClassName;
-import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nonnull;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -33,7 +33,7 @@ public class RequiresPermission {
 
   public static final AnnotationSpec SPEC = AnnotationSpec.builder(CLASS_NAME).build();
 
-  @NotNull
+  @Nonnull
   public static Builder builder() {
     return new Builder();
   }
@@ -107,7 +107,7 @@ public class RequiresPermission {
 
     public static final AnnotationSpec SPEC = AnnotationSpec.builder(CLASS_NAME).build();
 
-    @NotNull
+    @Nonnull
     public static AnnotationSpec value(String format, Object value) {
       return SPEC.toBuilder().addMember("value", format, value).build();
     }
@@ -120,7 +120,7 @@ public class RequiresPermission {
 
     public static final AnnotationSpec SPEC = AnnotationSpec.builder(CLASS_NAME).build();
 
-    @NotNull
+    @Nonnull
     public static AnnotationSpec value(String format, Object value) {
       return SPEC.toBuilder().addMember("value", format, value).build();
     }

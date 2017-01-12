@@ -38,4 +38,28 @@ public class VisibleForTestingTest {
     assertThat(VisibleForTesting.SPEC.toString())
         .isEqualTo("@android.support.annotation.VisibleForTesting");
   }
+
+  @Test
+  public void otherwisePrivate() throws Exception {
+    assertThat(VisibleForTesting.otherwisePrivate().toString())
+        .isEqualTo("@android.support.annotation.VisibleForTesting(otherwise = android.support.annotation.VisibleForTesting.PRIVATE)");
+  }
+
+  @Test
+  public void otherwisePackagePrivate() throws Exception {
+    assertThat(VisibleForTesting.otherwisePackagePrivate().toString())
+        .isEqualTo("@android.support.annotation.VisibleForTesting(otherwise = android.support.annotation.VisibleForTesting.PACKAGE_PRIVATE)");
+  }
+
+  @Test
+  public void otherwiseProtected() throws Exception {
+    assertThat(VisibleForTesting.otherwiseProtected().toString())
+        .isEqualTo("@android.support.annotation.VisibleForTesting(otherwise = android.support.annotation.VisibleForTesting.PROTECTED)");
+  }
+
+  @Test
+  public void otherwiseNone() throws Exception {
+    assertThat(VisibleForTesting.otherwiseNone().toString())
+        .isEqualTo("@android.support.annotation.VisibleForTesting(otherwise = android.support.annotation.VisibleForTesting.NONE)");
+  }
 }

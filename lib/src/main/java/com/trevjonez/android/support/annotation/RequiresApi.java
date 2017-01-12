@@ -18,7 +18,8 @@ package com.trevjonez.android.support.annotation;
 
 import com.squareup.javapoet.AnnotationSpec;
 import com.squareup.javapoet.ClassName;
-import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nonnull;
 
 /**
  * @author TrevJonez
@@ -29,7 +30,7 @@ public class RequiresApi {
 
   public static final AnnotationSpec SPEC = AnnotationSpec.builder(CLASS_NAME).build();
 
-  @NotNull
+  @Nonnull
   public static AnnotationSpec value(String format, Object value) {
     return SPEC.toBuilder().addMember("value", format, value).build();
   }
